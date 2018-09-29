@@ -7,12 +7,14 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
