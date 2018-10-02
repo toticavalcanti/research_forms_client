@@ -27,7 +27,9 @@ import { routing } from './app.routing';
     ColorPickerModule,
     ChartsModule,
     FormsModule,
-    AnswersModule
+    AnswersModule,
+    RouterModule,
+    routing,
   ],
   providers: [],
   bootstrap: [AppComponent]
