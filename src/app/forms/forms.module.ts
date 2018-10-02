@@ -8,6 +8,9 @@ import { ActiveComponent } from './shared/active/active.component';
   imports: [
     CommonModule
   ],
+  exports: [
+    FormListComponent
+  ],
   declarations: [FormListComponent, FormEditComponent, ActiveComponent]
 })
 export class FormsModule { }
