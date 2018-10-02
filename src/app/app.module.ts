@@ -29,7 +29,7 @@ import { routing } from './app.routing';
     FormsModule,
     AnswersModule,
     RouterModule,
-    routing,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
