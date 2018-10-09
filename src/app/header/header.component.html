@@ -1,3 +1,16 @@
-<p>
-  header works!
-</p>
+<nav class="blue lighten-2">
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo left" routerLink="/">
+      <img src="/assets/images/logo.png" alt="">
+    </a>
+    <ul class="right">
+      <div *ngIf="_tokenService.currentUserData == null">            
+        <li><a href="#" routerLink="/login">Login</a></li>
+        <li><a href="#" routerLink="/register">Register</a></li>      
+      </div>
+      <div *ngIf="_tokenService.currentUserData != null">            
+        <li><a href (click)="signOut()">Logout</a></li>          
+      </div>
+    </ul>
+  </div>
+</nav>
