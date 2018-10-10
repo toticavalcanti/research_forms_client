@@ -1,0 +1,30 @@
+.home{
+    background: url(/assets/images/background.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;    
+}
+
+.container{
+    padding-top: 15%;
+}
+
+.title{
+    font-weight: 700;
+    text-shadow: 4px 4px 2px rgb(109, 109, 109);        
+}
+
+.subtitle{
+    text-shadow: 4px 4px 2px rgb(43, 43, 43);    
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    .home {
+        left: 50%;
+        margin-left: -50%;   /* 50% */
+    }
+}
