@@ -1,3 +1,28 @@
-<p>
-  login works!
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col m6 offset-m3 s10 offset-s1">
+        <div class="row">
+          <h3 class="blue-text text-lighten-2">Login</h3>
+        </div>
+        <div>
+          <form #signInForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <input type="text" class="form-control" placeholder="Email" required [(ngModel)]="_signInData.email" name="email">
+              <input type="password" class="form-control" placeholder="Password" required [(ngModel)]="_signInData.password" name="password">
+            </div>
+            <div class="row">
+              <button class="btn waves-effect waves-light" type="submit" [disabled]="!signInForm.form.valid">Sign In
+                <i mz-icon-mdi [align]="'right'" [icon]="'send'" [size]="'24px'">
+                </i>
+              </button>
+            </div>
+            <div class="row">
+              <span class="pull-right">
+                <a href="/forgot_password">Forgot Password?</a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
