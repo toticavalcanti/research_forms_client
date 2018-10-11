@@ -1,5 +1,3 @@
-
-Ruby
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
@@ -11,59 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpModule,
-    BrowserAnimationsModule,
-    MaterializeModule.forRoot()
-  ],
-  exports: [
-    LoginComponent,
-    RegisterComponent,
-  ],
-  declarations: [LoginComponent, RegisterComponent]
-})
-export class UsersModule { }
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-	
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterializeModule } from 'ng2-materialize';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- 
- 
- 
 @NgModule({
   imports: [
     CommonModule,
