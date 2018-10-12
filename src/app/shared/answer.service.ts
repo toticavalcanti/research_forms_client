@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Angular2TokenService, A2tUiModule} from 'angular2-token';
+import { Angular2TokenService } from 'angular2-token';
  
 @Injectable()
 export class AnswerService {
