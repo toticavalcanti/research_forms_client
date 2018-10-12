@@ -16,7 +16,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { ChartsModule } from 'ng2-charts';
 import { HttpModule } from '@angular/http';
 import { Angular2TokenService } from 'angular2-token';
-
+import { FormService } from './shared/form.service';
 
 
 
@@ -39,7 +39,7 @@ import { Angular2TokenService } from 'angular2-token';
     ColorPickerModule,
     ChartsModule,
   ],
-  providers: [Angular2TokenService],
+  providers: [Angular2TokenService, FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
