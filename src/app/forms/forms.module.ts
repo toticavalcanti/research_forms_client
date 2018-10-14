@@ -9,8 +9,6 @@ import { RouterModule } from '@angular/router';
 import { routing } from './../app.routing';
 import { FormsModule as CoreFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   imports: [
     CommonModule,
