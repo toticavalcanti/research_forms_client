@@ -1,0 +1,23 @@
+.container{
+    margin-top: 4%;
+}
+
+.title-box{
+    margin-bottom: 0px;
+}
+
+.title{
+    margin-top: 0px;
+}
+
+.description{
+    text-align: justify;
+}
+
+.form{
+    margin-bottom: 0px;    
+}
+
+.btn{
+    width: 120px;
+}
