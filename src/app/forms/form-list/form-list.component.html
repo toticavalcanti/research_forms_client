@@ -1,3 +1,59 @@
-<p>
-  form-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col m8 offset-m2 s12">
+      <h5 class="blue-text text-lighten-2">Your Forms</h5>
+      <div *ngIf="forms?.length > 0">
+        <div class="card" *ngFor="let form of forms">
+          <div class="card-content">
+            <div class="row form">
+              <div class="col m9 s12">
+                <div class="row title-box">
+                  <div class="col m8 s12">
+                    <h5 class="title">{{ form.title }}</h5>
+                  </div>
+                  <div class="col m4 s12">
+                    <div class="row">
+                      <div class="col m6">
+                        <app-active [form]="form"></app-active>
+                      </div>
+                      <div class="col m6">
+                        <a href="#" class="grey-text" (click)="deleteForm(form)">
+                          <i mz-icon-mdi [icon]="'delete'" [size]="'24px'">
+                          </i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m12">
+                    <p class="description grey-text">{{ form.description | slice:0:120 }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col m3 s12 center">
+                <div class="col m12 s6">
+                  <div class="row">
+                    <a class="btn light-green center-align" routerLink="/forms/{{ form.slug }}">Edit</a>
+                  </div>
+                </div>
+                <div class="col m12 s6">
+                  <div class="row">
+                    <a class="btn blue center-align" routerLink="/answers/{{ form.id }}">Answers</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large waves-effect waves-lightred blue lighten-2 pulse" routerLink="/forms/new">
+    <i mz-icon-mdi [icon]="'plus'" [size]="'24px'">
+    </i>
+  </a>
+</div>
