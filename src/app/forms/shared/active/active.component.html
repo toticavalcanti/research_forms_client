@@ -1,3 +1,5 @@
-<p>
-  active works!
-</p>
+<mz-switch-container>
+  <input mz-switch
+    id="switch-id"
+    type="checkbox" [(ngModel)]="form.enable" (change)="toggleEnable()">
+</mz-switch-container>
