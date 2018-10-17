@@ -1,0 +1,19 @@
+.container{
+    margin-top: 4%;
+}
+
+.form{
+    margin-bottom: 0px;    
+}
+
+.card-content{
+    padding-bottom: 6px;
+    padding-top: 20px;
+}
+.color-picker{
+    height: 22px;
+    margin-top: 4px;
+}
+.materialize-textarea{
+    padding: 0;
+}
