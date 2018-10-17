@@ -1,3 +1,59 @@
-<p>
-  form-form works!
-</p>
+<div class="row">
+  <div class="col m8 offset-m2">
+    <div *ngIf="form.id == undefined">
+      <h5 class="blue-text text-lighten-2">New Form</h5>
+    </div>
+    <div *ngIf="form.id !== undefined">
+      <div class="row">
+        <div class="col m6">
+          <h5 class="blue-text text-lighten-2">Define Form</h5>
+        </div>
+        <div class="col m6">
+          <p>
+            <a class="right" href="" routerLink="/answers/{{ form.slug }}/new">
+              <i mz-icon-mdi
+                [align]="'right'"
+                [icon]="'eye'"
+                [size]="'24px'">
+              </i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="row">
+            <div class="col m9 s12">
+              <input type="text" placeholder="Title" name="title" [(ngModel)]="form.title" required #title="ngModel">
+              <label for="title" [hidden]="title.valid || title.pristine" class="red-text text-lighten-2">Required</label>
+            </div>
+            <div class="col m3 s12">
+              <div class="col m6 s2">
+                <input [(colorPicker)]="form.primary_color" [style.background]="form.primary_color" class="color-picker" />
+              </div>
+              <div class="col m6 s2">
+                <mz-switch-container>
+                  <input mz-switch id="switch-id" type="checkbox" [(ngModel)]="form.enable" name="primary_color">
+                </mz-switch-container>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <textarea type="text" placeholder="Description" class="materialize-textarea" name="description" [(ngModel)]="form.description" required #description="ngModel"></textarea>
+              <label for="description" [hidden]="description.valid || description.pristine" class="red-text text-lighten-2">Required</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m3 right">
+              <button [disabled]="!f.valid" class="btn" type="submit" *ngIf="form.id == undefined">Create</button>
+              <button [disabled]="!f.valid" class="btn" type="submit" *ngIf="form.id !== undefined">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
