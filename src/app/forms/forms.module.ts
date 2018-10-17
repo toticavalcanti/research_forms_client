@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { routing } from './../app.routing';
 import { FormsModule as CoreFormsModule } from '@angular/forms';
+import { FormFormComponent } from './form-form/form-form.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { FormsModule as CoreFormsModule } from '@angular/forms';
   exports: [
     FormListComponent
   ],
-  declarations: [FormListComponent, FormEditComponent, ActiveComponent]
+  declarations: [FormListComponent, FormEditComponent, ActiveComponent, FormFormComponent]
 })
 export class FormsModule { }
