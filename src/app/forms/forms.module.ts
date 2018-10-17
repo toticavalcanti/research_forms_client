@@ -10,6 +10,7 @@ import { routing } from './../app.routing';
 import { FormsModule as CoreFormsModule } from '@angular/forms';
 import { FormFormComponent } from './form-form/form-form.component';
 import { QuestionListComponent } from './question-list/question-list.component';
+import { QuestionFormComponent } from './question-form/question-form.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { QuestionListComponent } from './question-list/question-list.component';
   exports: [
     FormListComponent
   ],
-  declarations: [FormListComponent, FormEditComponent, ActiveComponent, FormFormComponent, QuestionListComponent]
+  declarations: [FormListComponent, FormEditComponent, ActiveComponent, FormFormComponent, QuestionListComponent, QuestionFormComponent]
 })
 export class FormsModule { }
