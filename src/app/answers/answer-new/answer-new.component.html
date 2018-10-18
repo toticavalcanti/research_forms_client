@@ -1,3 +1,59 @@
-<p>
-  answer-new works!
-</p>
+<div [style.background]="form.primary_color" class="answer-new">
+  <div class="container">
+    <div class="row">
+      <div class="col m8 offset-m2 s12">
+        <h5 class="blue-text text-lighten-2">Description</h5>
+        <div class="card">
+          <div class="card-content">
+            <h5>{{ form.title }}</h5>
+            <p>{{ form.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m8 offset-m2 s12">
+        <h5 class="blue-text text-lighten-2">Questions</h5>
+
+        <div *ngIf="answer">
+          <form #a="ngForm" (ngSubmit)="onSubmit(a)">
+            <div class="card" *ngFor="let questions_answer of answer.questions_answers; let idx = index">
+              <div class="card-content">
+                <div class="row">
+                  <div class="col m12">
+                    <p>{{ idx + 1 }} - {{ questions_answer.question.title }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m4" *ngIf="questions_answer.question.kind == 'boolean'">
+                    <div class="col m6">
+                      <input name="options_{{ questions_answer.question.id }}" type="radio" id="yes_{{ questions_answer.question.id }}" [(ngModel)]="questions_answer.value"
+                        #value="ngModel" [value]="1" />
+                      <label for="yes_{{ questions_answer.question.id }}">Yes</label>
+                    </div>
+                    <div class="col m6">
+                      <input name="options_{{ questions_answer.question.id }}" type="radio" id="no_{{ questions_answer.question.id }}" [(ngModel)]="questions_answer.value"
+                        #value="ngModel" [value]="0" />
+                      <label for="no_{{ questions_answer.question.id }}">No</label>
+                    </div>
+                  </div>
+                  <div class="col m12" *ngIf="questions_answer.question.kind == 'short_text'">
+                    <input type="text" placeholder="Your Answer..." name="value" [(ngModel)]="questions_answer.value" #value="ngModel">
+                  </div>
+                  <div class="col m2" *ngIf="questions_answer.question.kind == 'integer'">
+                    <input type="number" placeholder="0" name="value" [(ngModel)]="questions_answer.value" #value="ngModel">
+                  </div>
+                  <div class="col m12" *ngIf="questions_answer.question.kind == 'long_text'">
+                    <textarea placeholder="Your Question" class="materialize-textarea" name="value" [(ngModel)]="questions_answer.value" #value="ngModel">
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button [disabled]="!a.valid" class="btn right" type="submit" *ngIf="form.enable != false">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
