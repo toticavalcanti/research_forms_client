@@ -40,7 +40,7 @@ export class QuestionFormComponent implements OnInit {
     }
   }
 
-  deleteForm(form): boolean {
+  deleteQuestion(): boolean {
     if (confirm('Your want delete this question?')) {
       this.questionService.destroyQuestion(this.question.id).subscribe(data => {
         const index = this.questions.indexOf (this.question);
