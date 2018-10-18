@@ -41,7 +41,7 @@ export class QuestionFormComponent implements OnInit {
   }
 
   deleteQuestion(): boolean {
-    if (confirm('Your want delete this question?')) {
+    if (confirm('Do you want delete this question?')) {
       this.questionService.destroyQuestion(this.question.id).subscribe(data => {
         const index = this.questions.indexOf (this.question);
         this.questions.splice(index, 1);
