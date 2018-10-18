@@ -1,3 +1,41 @@
-<p>
-  question-form works!
-</p>
+<div class="card">
+  <div class="card-content">
+    <form #q="ngForm" (ngSubmit)="onSubmit(q)">
+      <div class="question">
+        <div class="row">
+          <div class="col m9 input-field">
+            <textarea placeholder="Your Question" class="materialize-textarea" name="title" [(ngModel)]="question.title" #title="ngModel" required></textarea>
+          </div>
+          <div class="col m3">
+            <mz-select-container>
+                <select mz-select
+                  [placeholder]="'Kind'"
+                  [(ngModel)]="question.kind"
+                  #kind="ngModel"
+                  name="kind"
+                  required
+                  >
+                    <option value="short_text">Short Text</option>
+                    <option value="long_text">Long text</option>
+                    <option value="integer">Integer</option>           
+                    <option value="boolean">Boolean</option>                                            
+                </select>
+              </mz-select-container>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col m3" *ngIf="question.id !== undefined">
+            <a href="#" class="grey-text" (click)="deleteForm(form)">
+              <i mz-icon-mdi [icon]="'delete'" [size]="'24px'">
+              </i>
+            </a>
+          </div>
+          <div class="col m3 right">
+            <button [disabled]="!q.valid" class="btn" type="submit" *ngIf="question.id == undefined">Create</button>
+            <button [disabled]="!q.valid" class="btn" type="submit" *ngIf="question.id !== undefined">Update</button>                
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>  
+</div>
