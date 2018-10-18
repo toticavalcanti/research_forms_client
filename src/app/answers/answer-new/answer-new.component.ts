@@ -47,7 +47,6 @@ export class AnswerNewComponent implements OnInit {
   }
 
   onSubmit(f) {
-    console.log(this.answer);
     this.answerService.createAnswer(this.answer).subscribe(data => {
       this.toastService.show('Answer send with sucess', 10000, 'green');
       this.answer = new Answer({form_id: this.form.id});
