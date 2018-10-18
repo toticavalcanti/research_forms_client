@@ -1,25 +1,21 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit, Input } from '@angular/core';
+import { QuestionService } from '../../shared/question.service';
+import { Question } from '../../shared/question.model';
 
-import { QuestionListComponent } from './question-list.component';
+@Component({
+  selector: 'app-question-list',
+  templateUrl: './question-list.component.html',
+  styleUrls: ['./question-list.component.css']
+})
+export class QuestionListComponent implements OnInit {
 
-describe('QuestionListComponent', () => {
-  let component: QuestionListComponent;
-  let fixture: ComponentFixture<QuestionListComponent>;
+  @Input() questions: Question[];
+  @Input() form_id: number;
+  public question_new: Question = new Question({});
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ QuestionListComponent ]
-    })
-    .compileComponents();
-  }));
+  constructor() { }
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(QuestionListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  ngOnInit() {
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+}
