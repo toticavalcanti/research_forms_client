@@ -1,3 +1,18 @@
-<p>
-  answer-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col m10 offset-m1">
+      <div class="card">
+        <div class="card-content">
+          <mz-tab>
+            <mz-tab-item [active]="'true'" [label]="'ALL'">
+              <app-all></app-all>
+            </mz-tab-item>
+            <mz-tab-item [label]="'INDIVIDUAL'">
+              <app-individual></app-individual>
+            </mz-tab-item>
+          </mz-tab>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
