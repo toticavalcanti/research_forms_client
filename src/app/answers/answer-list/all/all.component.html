@@ -1,3 +1,13 @@
-<p>
-  all works!
-</p>
+<div *ngFor="let question of questions; let idx = index">
+  <h5>{{ idx + 1 }} - {{ question.title }}</h5>
+  <div *ngIf="question.kind == 'integer'">
+      <app-graph-number [questions_answers]="question.questions_answers"></app-graph-number>          
+  </div>
+  <div *ngIf="question.kind == 'boolean'">
+      <app-graph-boolean [questions_answers]="question.questions_answers"></app-graph-boolean>          
+  </div>
+  <div *ngIf="question.kind == 'short_text' || question.kind == 'long_text' ">
+    <app-graph-text [questions_answers]="question.questions_answers"></app-graph-text>    
+  </div>
+  <hr>
+</div>
