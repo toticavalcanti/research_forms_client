@@ -8,12 +8,13 @@ import { GraphBooleanComponent } from './shared/graph-boolean/graph-boolean.comp
 import { IndividualDetailsComponent } from './shared/individual-details/individual-details.component';
 import { FormsModule as CoreFormsModule } from '@angular/forms';
 import { AllComponent } from './answer-list/all/all.component';
+import { IndividualComponent } from './answer-list/individual/individual.component';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreFormsModule
   ],
-  declarations: [AnswerListComponent, AnswerNewComponent, GraphNumberComponent, GraphTextComponent, GraphBooleanComponent, IndividualDetailsComponent, AllComponent]
+  declarations: [AnswerListComponent, AnswerNewComponent, GraphNumberComponent, GraphTextComponent, GraphBooleanComponent, IndividualDetailsComponent, AllComponent, IndividualComponent]
 })
 export class AnswersModule { }
